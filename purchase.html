@@ -1,0 +1,65 @@
+<!-- Xin Li -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Purchase Form</title>
+<style>
+form{
+	width:300px;
+	padding: 15px;
+	background-color: lightblue;
+	border-style:solid;
+	border-width:10px;
+	border-top-color:lightgrey;
+	border-left-color:lightgrey;
+	border-right-color:black;
+	border-bottom-color:black;
+	overflow:hidden;
+}
+.head{
+	text-align: center;
+}
+
+
+label, input {
+	vertical-align:middle;
+}
+
+label{
+	width: 110px;
+	display: inline-block;
+	text-align: right;
+	margin-right:10px;
+}
+
+
+</style>
+
+</head>
+<body>
+<form action="receipt.php" method="post" onsubmit="show(); return false;">
+	<div class="head"><h3>Widget Purchase</h3></div>
+	<p><label>First Name </label><input type="text" name="FirstName" id="FirstName" pattern="[A-Z a-z]*" required></p>
+	<p><label>Last Name </label><input type="text" name="LastName" id="LastName" pattern="[A-Z a-z]*" required></p>
+	<p><label>Phone </label><input type="text" name="Phone" id="Phone" pattern="^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" required> </p>
+	<p><label>City </label><input type="text" name="City" id="City" pattern="[A-Z a-z]*" required> </p>
+	<p><label>State </label>
+	<select id="State" name="State" required>
+		<option id="State" value= "Arizona">Arizona</option>
+		<option id="State" value= "Nevada">Nevada</option>
+		<option id="State" value= "Utah">Utah</option>
+		<option id="State" value= "Utah">California</option>
+	</select>
+	</p>
+	<p><label>Zip </label><input type="text" name="Zip" id="Zip" pattern="[0-9]{5}" required></p>
+	<p><label>Quantity(1-5) </label><input name="Quantity" id='num' type="number" min="1" max="5" required></p>
+	<input id="Samll" type='radio' name="Size" value='Samll' required> Samll $2.00 <br>
+	<input id='Medium' type='radio' name="Size" value='Medium' required> Medium $2.65 <br>
+	<input id='Large' type='radio' name="Size" value='Large' required> Large $2.99 <br>
+	<br><br>
+	<input type="submit">
+	<br><br><br>
+</form>
+</body>
+</html>
